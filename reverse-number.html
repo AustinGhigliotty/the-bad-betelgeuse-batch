@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<h1>Descending order</h1>
+<input type="number" id="number">
+<button id="submit">Submit</button>
+<p>Your numbers in descending order are: <span id="result"></span></p>
+<script>
+    function descendingOrder(n){
+        var arr = n.toString().split('') ;
+        arr.sort();
+        arr.reverse();
+        var str = arr.join("");
+        return parseInt(str);
+    }
+    document.getElementById("submit").addEventListener("click", function(){
+        // var base = document.getElementById("number").value;
+        // descendingOrder(base);
+        document.getElementById("result").innerHTML = descendingOrder(document.getElementById("number").value);
+    });
+</script>
+</body>
+</html>
