@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<h1>High and Low</h1>
+<input type="text" id="number">
+<button id="submit">Submit</button>
+<p>The highs and lows are: <span id="result"></span></p>
+<script>
+    function highAndLow(numbers){
+        var numberArray = numbers.split(' ').map(Number);
+        var high = Math.max(...numberArray);
+        var low = Math.min(...numberArray);
+        return high + " " + low
+    }
+    document.getElementById("submit").addEventListener("click", function(){
+        // var base = document.getElementById("number").value;
+        // descendingOrder(base);
+        document.getElementById("result").innerHTML = highAndLow(document.getElementById("number").value);
+    });
+</script>
+</body>
+</html>
