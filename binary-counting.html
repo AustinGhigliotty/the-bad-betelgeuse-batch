@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Binary Counting</title>
+</head>
+<body>
+<h1>Binary Bit Counting</h1>
+<label for="number">Enter your number: </label>
+<input type="text" id="number">
+<button id="submit">Submit</button>
+<p><span id="result"></span></p>
+<script>
+    var countBits = function(n) {
+        var binary = (n >>> 0).toString(2).split('').map(Number);
+        var ones = 0;
+        for (var i = 0; i < binary.length; i++) {
+            if (binary[i] === 1) {
+                ones++;
+            }
+        }
+        return ones;
+    };
+    document.getElementById("submit").addEventListener("click", function(){
+        document.getElementById("result").innerHTML = countBits(document.getElementById("number").value);
+    });
+</script>
+
+
+</body>
+</html>
